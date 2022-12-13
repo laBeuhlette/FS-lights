@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
@@ -27,7 +28,9 @@ public class cast : MonoBehaviour
 
     public List<int> pixTab = new List<int>();
     public List<int> refPixTab = new List<int>();
-    
+
+    public TextMeshProUGUI diff;
+
 
     // Start is called before the first frame update
     void Start()
@@ -73,6 +76,8 @@ public class cast : MonoBehaviour
         else
             Debug.DrawRay(transform.position, -Vector3.forward * 10, Color.red);
         */
+
+        
         #region inputY
         if (Input.GetKeyDown(KeyCode.Y))
         {
@@ -192,7 +197,7 @@ public class cast : MonoBehaviour
 
         }
         #endregion
-
+        
     }
 
     public void verif()
@@ -255,6 +260,8 @@ public class cast : MonoBehaviour
                 }
 
             }
+
+            diff.SetText(diffPix.ToString());
 
             if(diffPix < 700)
             {
