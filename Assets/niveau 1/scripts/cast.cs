@@ -136,7 +136,7 @@ public class cast : MonoBehaviour
 
             }
 
-            if(diffPix < 1500)
+            if(diffPix < 700)
             {
                 Debug.Log("level completed");
                 SceneManager.LoadScene(LevelToLoad);
@@ -255,7 +255,7 @@ public class cast : MonoBehaviour
 
             }
 
-            if(diffPix < 1500)
+            if(diffPix < 700)
             {
                 Debug.Log("level completed");
                 SceneManager.LoadScene(LevelToLoad);
