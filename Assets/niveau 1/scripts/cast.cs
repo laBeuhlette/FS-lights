@@ -197,6 +197,7 @@ public class cast : MonoBehaviour
 
     public void verif()
     {
+        refPixTab.Clear();
         RenderTexture.active = refSourceTex;
             refTargetTex.ReadPixels(new Rect(0, 0, refSourceTex.width, refSourceTex.height), 0, 0);
             refTargetTex.Apply();
@@ -255,7 +256,7 @@ public class cast : MonoBehaviour
 
             }
 
-            if(diffPix < 1500)
+            if(diffPix < 700)
             {
                 Debug.Log("level completed");
                 SceneManager.LoadScene(LevelToLoad);
