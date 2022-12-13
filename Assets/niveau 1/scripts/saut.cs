@@ -93,12 +93,13 @@ public class saut : MonoBehaviour
                 // //////////////// * PositionSurPlan * ////////////////////
                 if (mode == 1)
                 {
+                    transform.position += new Vector3(0f, mousePosition.y - oldPositionY, 0f);
 
-                    Vector3 _moveVector = new Vector3(mousePosition.x - oldPositionX, 0f, oldPositionY - mousePosition.y);
+                    Vector3 _moveVector = new Vector3(mousePosition.x - oldPositionX, 0f, 0f);
 
                     _moveVector = cam.transform.rotation * _moveVector;
 
-                    _moveVector.y = 0f;
+                    _moveVector.z = 0f;
 
                     transform.position -= _moveVector;
 
@@ -116,12 +117,21 @@ public class saut : MonoBehaviour
                 // ////////////////Hauteur////////////////////
                 else if (mode == 2)
                 {
-                    transform.position += new Vector3(0f, mousePosition.y - oldPositionY, 0f);
+                    Vector3 _moveVector = new Vector3(0f, 0f, oldPositionY - mousePosition.y);
+
+                    _moveVector = cam.transform.rotation * _moveVector;
+
+                    _moveVector.x = 0f;
+                    _moveVector.y = 0f;
+
+                    transform.position -= _moveVector;
+
+                    //transform.position += new Vector3(0f, mousePosition.y - oldPositionY, 0f);
                 }
                 // ////////////////Rotation////////////////////
                 else if (mode == 3)
                 {
-                    transform.Rotate(new Vector3(3 * (oldPositionY - mousePosition.y), 3 * (mousePosition.x - oldPositionX), 0f), Space.World);
+                    transform.Rotate(new Vector3(2 * (oldPositionY - mousePosition.y), 2 * (mousePosition.x - oldPositionX), 0f), Space.World);
                 }
 
 
