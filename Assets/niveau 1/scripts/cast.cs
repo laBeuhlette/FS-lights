@@ -207,7 +207,7 @@ public class cast : MonoBehaviour
             refTargetTex.ReadPixels(new Rect(0, 0, refSourceTex.width, refSourceTex.height), 0, 0);
             refTargetTex.Apply();
 
-            Color[] refPix = refTargetTex.GetPixels(37, 37, 219-37, 219-37);
+            Color[] refPix = refTargetTex.GetPixels(0, 0, 256, 256);
             for (int i = 0; i< refPix.Length; i ++)
             {
                 if (refPix[i].r > 0.5)
@@ -232,7 +232,7 @@ public class cast : MonoBehaviour
             targetTex.Apply();
 
 
-            Color[] pix = targetTex.GetPixels(37, 37, 219-37, 219-37);
+            Color[] pix = targetTex.GetPixels(0, 0, 256, 256);
             
             for (int i = 0; i< pix.Length; i ++)
             {
