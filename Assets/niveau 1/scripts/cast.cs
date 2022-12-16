@@ -265,7 +265,7 @@ public class cast : MonoBehaviour
 
             diff.SetText(diffPix.ToString());
 
-            if(diffPix < 70000)
+            if(diffPix < 700)
             {
                 Debug.Log("level completed");
                 SceneManager.LoadScene(LevelToLoad);
