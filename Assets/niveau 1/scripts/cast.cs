@@ -156,8 +156,8 @@ public class cast : MonoBehaviour
             */
 
 
-            
-            
+
+
             /*
             for (int i = 0; i < 128; i++)
             {
@@ -194,6 +194,8 @@ public class cast : MonoBehaviour
             }
             targetTex.Apply();
             */
+
+            
 
         }
         #endregion
@@ -263,7 +265,7 @@ public class cast : MonoBehaviour
 
             diff.SetText(diffPix.ToString());
 
-            if(diffPix < 700)
+            if(diffPix < 70000)
             {
                 Debug.Log("level completed");
                 SceneManager.LoadScene(LevelToLoad);

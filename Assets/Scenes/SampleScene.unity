@@ -422,6 +422,7 @@ MonoBehaviour:
   cam: {fileID: 1333894098}
   mesObjets: []
   sphere: {fileID: 1559477860}
+  torch: {fileID: 1083593796}
 --- !u!1 &284885271
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +476,7 @@ MonoBehaviour:
   myTransform: {fileID: 0}
   cam: {fileID: 1333894098}
   canMove: 0
+  sensi: 0
 --- !u!54 &284885274
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1089,6 +1091,7 @@ MonoBehaviour:
   myTransform: {fileID: 0}
   cam: {fileID: 1333894098}
   canMove: 0
+  sensi: 0
 --- !u!1 &685750286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,6 +1279,7 @@ MonoBehaviour:
   myTransform: {fileID: 0}
   cam: {fileID: 1333894098}
   canMove: 0
+  sensi: 0
 --- !u!54 &759857454
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2142,6 +2146,7 @@ MonoBehaviour:
   myTransform: {fileID: 0}
   cam: {fileID: 1333894098}
   canMove: 0
+  sensi: 0
 --- !u!54 &1071571345
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2233,7 +2238,7 @@ GameObject:
   - component: {fileID: 1083593798}
   - component: {fileID: 1083593797}
   m_Layer: 0
-  m_Name: Spot Light
+  m_Name: Torche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2490,6 +2495,7 @@ MonoBehaviour:
   myTransform: {fileID: 0}
   cam: {fileID: 1333894098}
   canMove: 0
+  sensi: 0
 --- !u!4 &1169617259
 Transform:
   m_ObjectHideFlags: 0
@@ -3575,6 +3581,7 @@ MonoBehaviour:
   myTransform: {fileID: 0}
   cam: {fileID: 1333894098}
   canMove: 0
+  sensi: 0
 --- !u!54 &1761750110
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3797,7 +3804,7 @@ LightingSettings:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   serializedVersion: 4
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 0
   m_RealtimeEnvironmentLighting: 1

@@ -28,6 +28,8 @@ public class saut : MonoBehaviour
 
     public bool canMove;
 
+    public float sensi;
+
 
     //public Vector3 pos = new Vector3 (10f, 10f, 10f);
 
@@ -93,9 +95,9 @@ public class saut : MonoBehaviour
                 // //////////////// * PositionSurPlan * ////////////////////
                 if (mode == 1)
                 {
-                    transform.position += new Vector3(0f, mousePosition.y - oldPositionY, 0f);
+                    transform.position += new Vector3(0f, sensi * (mousePosition.y - oldPositionY), 0f);
 
-                    Vector3 _moveVector = new Vector3(mousePosition.x - oldPositionX, 0f, 0f);
+                    Vector3 _moveVector = new Vector3(sensi * (mousePosition.x - oldPositionX), 0f, 0f);
 
                     _moveVector = cam.transform.rotation * _moveVector;
 

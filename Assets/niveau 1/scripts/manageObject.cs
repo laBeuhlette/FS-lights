@@ -20,6 +20,9 @@ public class manageObject : MonoBehaviour
 
     public GameObject sphere;
 
+    public GameObject torch;
+    private float ratioSensi;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +46,15 @@ public class manageObject : MonoBehaviour
         // récupération de la position de la souris
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+        if(target != null)
+        {
+            ratioSensi = Vector3.Distance(target.transform.position, torch.transform.position) / 25;
+        }
+        else
+        {
+            ratioSensi = 1;
+        }
+        
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -72,7 +84,14 @@ public class manageObject : MonoBehaviour
 
                 
             }
+
+            if (target.transform.tag == "Objets")
+            {
+                target.GetComponent<saut>().sensi = ratioSensi;
+            }
         }
+
+        //Debug.Log(  (Vector3.Distance(target.transform.position, torch.transform.position)) / 25  );
     }
 
     public void changeMode()
