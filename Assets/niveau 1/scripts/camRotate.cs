@@ -37,7 +37,7 @@ public class camRotate : MonoBehaviour
             following = false;
         }
 
-           if (following && canMove)
+        if (following && canMove)
         {
             transform.Rotate(new Vector3(0f,  (oldPositionX - mousePosition.x) * 1.5f , 0f), Space.World);
         }
