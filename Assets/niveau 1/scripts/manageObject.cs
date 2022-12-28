@@ -43,7 +43,7 @@ public class manageObject : MonoBehaviour
 
         RaycastHit hit;
 
-        // récupération de la position de la souris
+        // rï¿½cupï¿½ration de la position de la souris
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if(target != null)
@@ -63,7 +63,7 @@ public class manageObject : MonoBehaviour
             {
                 if (hit.transform.tag == "Objets")
                 {
-                    //Debug.Log("l'objet touché :" + hit.transform);
+                    //Debug.Log("l'objet touchï¿½ :" + hit.transform);
                     if (target != null)
                     {
                         if(target.transform.tag == "cam")
@@ -108,13 +108,13 @@ public class manageObject : MonoBehaviour
         target.GetComponent<saut>().mode = managerMode;
     }
 
-    public void setToHorizontal()
+    public void setToPosition()
     {
         managerMode = 1;
         target.GetComponent<saut>().mode = managerMode;
     }
 
-    public void setToVertical()
+    public void setToProfondeur()
     {
         managerMode = 2;
         target.GetComponent<saut>().mode = managerMode;
