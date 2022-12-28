@@ -29,10 +29,11 @@ public class manageObject : MonoBehaviour
 
         Application.targetFrameRate = 60;
         mesObjets = GameObject.FindGameObjectsWithTag("Objets");
-        /*foreach (GameObject Obj in mesObjets)
+        foreach (GameObject Obj in mesObjets)
         {
-            Debug.Log("l'objet :" + Obj.name); 
-        }*/
+            Obj.SetActive(false); 
+        }
+        
 
         managerMode = 1;
     }
@@ -133,6 +134,12 @@ public class manageObject : MonoBehaviour
 
         target = sphere;
         target.GetComponent<camRotate>().canMove = true;
+
+        foreach (GameObject Obj in mesObjets)
+        {
+            if (!Obj.active)
+                Obj.SetActive(true); 
+        }
     }
 
 
