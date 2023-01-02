@@ -30,6 +30,9 @@ public class saut : MonoBehaviour
 
     public float sensi;
 
+    public GameObject objectManager;
+    public manageObject MO;
+
 
     //public Vector3 pos = new Vector3 (10f, 10f, 10f);
 
@@ -51,7 +54,8 @@ public class saut : MonoBehaviour
 
         mode = 1;
 
-        
+        objectManager = GameObject.Find("object manager");
+        //objectManager.GetComponent<MO>().phase2();
     }
 
     // Update is called once per frame
@@ -59,13 +63,13 @@ public class saut : MonoBehaviour
     {
         //RaycastHit hit;
 
-        // récupération de la position de la souris
+        // rï¿½cupï¿½ration de la position de la souris
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         
 
 
-        // ///////////////////////Détection de clic/////////////////
+        // ///////////////////////Dï¿½tection de clic/////////////////
         if (Input.GetMouseButtonDown(0))
         {
             following = true;
@@ -89,7 +93,7 @@ public class saut : MonoBehaviour
             // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
 
-            // ///////////////////////   -Déplacements-   /////////////////
+            // ///////////////////////   -Dï¿½placements-   /////////////////
             if (following)
             {
                 // //////////////// * PositionSurPlan * ////////////////////
@@ -152,7 +156,7 @@ public class saut : MonoBehaviour
         // ////////////////Reset////////////////////
         if (Input.GetKeyDown(KeyCode.R))
         {
-            // Reset appliqué au mode de contrôle en cours (déplacement / rotation)
+            // Reset appliquï¿½ au mode de contrï¿½le en cours (dï¿½placement / rotation)
             if (mode <= 2)
             {
                 transform.position = memoryPosition;
@@ -187,6 +191,18 @@ public class saut : MonoBehaviour
             {
                 mode = 1;
             }
+        
+    }
+
+    public void OnTriggerEnter(Collider touched)
+    {
+        
+        if(touched.gameObject.name == "cube0_target")
+        {
+            objectManager.GetComponent<manageObject>().phase2();
+            canMove = false;
+        }
+        
         
     }
 }

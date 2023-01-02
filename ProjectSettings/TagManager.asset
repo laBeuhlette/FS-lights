@@ -8,6 +8,7 @@ TagManager:
   - Lvl1
   - cam
   - Ignore
+  - manager
   layers:
   - Default
   - TransparentFX

@@ -15,13 +15,18 @@ public class manageObject : MonoBehaviour
     public GameObject[] mesObjets;
 
 
-    private GameObject target;
+    public GameObject target;
     private int managerMode;
 
     public GameObject sphere;
 
     public GameObject torch;
     private float ratioSensi;
+
+    public GameObject c0;
+    public GameObject c0_target;
+    public GameObject c1;
+    public GameObject c1_target;
 
     // Start is called before the first frame update
     void Start()
@@ -31,11 +36,30 @@ public class manageObject : MonoBehaviour
         mesObjets = GameObject.FindGameObjectsWithTag("Objets");
         foreach (GameObject Obj in mesObjets)
         {
-            Obj.SetActive(false); 
+            Obj.SetActive(false);
+            
+            switch (Obj.name)
+            {
+                case "cube0":
+                    c0 = Obj;
+                    break;
+                case "cube0_target":
+                    c0_target = Obj;
+                    break;
+                case "cube1":
+                    c1 = Obj;
+                    break;
+                default :
+                    break;
+            }
         }
+
         
 
-        managerMode = 1;
+        phase1();
+        
+
+        //managerMode = 1;
     }
 
     // Update is called once per frame
@@ -135,11 +159,40 @@ public class manageObject : MonoBehaviour
         target = sphere;
         target.GetComponent<camRotate>().canMove = true;
 
-        foreach (GameObject Obj in mesObjets)
+        /*foreach (GameObject Obj in mesObjets)
         {
             if (!Obj.active)
                 Obj.SetActive(true); 
-        }
+        }*/
+    }
+
+    public void phase1()
+    {
+        // Manager en mode profondeur
+        Debug.Log("phase 1");
+        managerMode = 2;
+        
+        // activation bloc ref et sa target
+        c0.SetActive(true);
+        target = c0;
+        
+
+        c0_target.SetActive(true); 
+
+    }
+
+    public void phase2()
+    {
+        Debug.Log("phase 2");
+        managerMode = 1;
+
+        
+        c1.SetActive(true);
+        target = c1;
+        
+        c0_target.SetActive(false);
+
+
     }
 
 
