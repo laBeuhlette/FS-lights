@@ -202,6 +202,8 @@ public class saut : MonoBehaviour
             objectManager.GetComponent<manageObject>().phase2();
             canMove = false;
         }
+
+        gameObject.tag = "Ignore";
         
         
     }

@@ -45,6 +45,7 @@ public class manageObject : MonoBehaviour
                     break;
                 case "cube0_target":
                     c0_target = Obj;
+                    Obj.tag = "Ignore";
                     break;
                 case "cube1":
                     c1 = Obj;
