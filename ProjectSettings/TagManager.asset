@@ -9,6 +9,7 @@ TagManager:
   - cam
   - Ignore
   - manager
+  - UI_parts
   layers:
   - Default
   - TransparentFX

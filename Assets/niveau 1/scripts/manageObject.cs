@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using TMPro;
+
 public class manageObject : MonoBehaviour
 {
 
@@ -28,6 +30,17 @@ public class manageObject : MonoBehaviour
     public GameObject c1;
     public GameObject c1_target;
 
+    public GameObject UI;
+    public GameObject[] UI_parts;
+
+    private GameObject po;
+    private GameObject pr;
+    private GameObject ro;
+    private GameObject rc;
+    private GameObject verif;
+
+    public TextMeshProUGUI tuto;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,11 +63,42 @@ public class manageObject : MonoBehaviour
                 case "cube1":
                     c1 = Obj;
                     break;
+                case "cube1_target":
+                    c1_target = Obj;
+                    Obj.tag = "Ignore";
+                    break;
+                default :
+                    break;
+            }
+        }
+        UI_parts = GameObject.FindGameObjectsWithTag("UI_parts");
+        foreach (GameObject child in UI_parts) {
+
+            child.SetActive(false);
+
+            switch (child.name)
+            {
+                case "PO":
+                    po = child;
+                    break;
+                case "PR":
+                    pr = child;
+                    break;
+                case "RO":
+                    ro = child;
+                    break;
+                case "RC":
+                    rc = child;
+                    break;
+                case "VERIF":
+                    verif = child;
+                    break;
                 default :
                     break;
             }
         }
 
+        
         
 
         phase1();
@@ -180,6 +224,15 @@ public class manageObject : MonoBehaviour
 
         c0_target.SetActive(true); 
 
+
+        pr.SetActive(true);
+
+        /*tempUi = UI.Find("PO");
+        tempUi.SetActive(false);
+        */
+
+        //tuto.SetActive(true);
+        tuto.SetText("Slide the bloc to his target");
     }
 
     public void phase2()
@@ -187,13 +240,40 @@ public class manageObject : MonoBehaviour
         Debug.Log("phase 2");
         managerMode = 1;
 
+        c0.tag = "Ignore" ;
+        target.GetComponent<saut>().canMove = false;
+
         
         c1.SetActive(true);
         target = c1;
+
+        c1_target.SetActive(true);
         
         c0_target.SetActive(false);
 
+        pr.SetActive(false);
+        
+        po.SetActive(true);
 
+        tuto.SetText("Place the bloc next to his target");
+    }
+
+    public void phase3()
+    {
+        Debug.Log("phase 3");
+        toCam();
+
+        c1_target.SetActive(false);
+        c1.tag = "Ignore";
+        c1.GetComponent<saut>().canMove = false;
+        target = null;
+
+        po.SetActive(false);
+        
+        verif.SetActive(true);
+        rc.SetActive(true);
+        
+        tuto.SetText("you can rotate the cam and when you re ready, press the verif button");
     }
 
 

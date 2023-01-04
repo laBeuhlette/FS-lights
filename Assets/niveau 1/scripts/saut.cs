@@ -194,17 +194,18 @@ public class saut : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter(Collider touched)
+    /*public void OnTriggerEnter(Collider touched)
     {
         
         if(touched.gameObject.name == "cube0_target")
         {
             objectManager.GetComponent<manageObject>().phase2();
-            canMove = false;
+            //canMove = false;
+            //gameObject.tag = "Ignore";
         }
 
-        gameObject.tag = "Ignore";
         
         
-    }
+        
+    }*/
 }
