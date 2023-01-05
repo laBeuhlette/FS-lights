@@ -146,6 +146,7 @@ public class cast : MonoBehaviour
             }
 
             diff.SetText(diffPix.ToString());
+            Debug.Log(diffPix);
 
             if(diffPix < 700)
             {

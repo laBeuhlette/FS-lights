@@ -29,6 +29,9 @@ public class manageObject : MonoBehaviour
     public GameObject c0_target;
     public GameObject c1;
     public GameObject c1_target;
+    public GameObject c1_sphere;
+    public GameObject c2;
+    
 
     public GameObject UI;
     public GameObject[] UI_parts;
@@ -66,6 +69,12 @@ public class manageObject : MonoBehaviour
                 case "cube1_target":
                     c1_target = Obj;
                     Obj.tag = "Ignore";
+                    break;
+                case "cube2":
+                    c2 = Obj;
+                    break;
+                case "sphere":
+                    c1_sphere = Obj;
                     break;
                 default :
                     break;
@@ -248,6 +257,7 @@ public class manageObject : MonoBehaviour
         target = c1;
 
         c1_target.SetActive(true);
+        c1_sphere.SetActive(true);
         
         c0_target.SetActive(false);
 
@@ -261,19 +271,23 @@ public class manageObject : MonoBehaviour
     public void phase3()
     {
         Debug.Log("phase 3");
-        toCam();
+        //toCam();
 
         c1_target.SetActive(false);
+        c1_sphere.SetActive(false);
         c1.tag = "Ignore";
         c1.GetComponent<saut>().canMove = false;
         target = null;
 
-        po.SetActive(false);
+        c2.SetActive(true);
+
+        po.SetActive(true);
+        pr.SetActive(true);
         
         verif.SetActive(true);
         rc.SetActive(true);
         
-        tuto.SetText("you can rotate the cam and when you re ready, press the verif button");
+        tuto.SetText("you place the last object and press the verif button");
     }
 
 

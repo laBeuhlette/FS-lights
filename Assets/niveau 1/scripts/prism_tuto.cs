@@ -21,7 +21,7 @@ public class prism_tuto : MonoBehaviour
     void Update()
     {
         //Debug.Log(Vector3.Distance(myTransform.position, cube.transform.position));
-        if(Vector3.Distance(myTransform.position, cube.transform.position) < 0.03f)
+        if(Vector3.Distance(myTransform.position, cube.transform.position) < 0.022f)
         {
             objectManager.GetComponent<manageObject>().phase3();
             
