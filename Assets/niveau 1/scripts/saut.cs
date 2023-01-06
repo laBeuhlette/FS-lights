@@ -137,7 +137,9 @@ public class saut : MonoBehaviour
                 // ////////////////Rotation////////////////////
                 else if (mode == 3)
                 {
-                    transform.Rotate(new Vector3(2 * (oldPositionY - mousePosition.y), 2 * (mousePosition.x - oldPositionX), 0f), Space.World);
+                    transform.Rotate(new Vector3(2 * (oldPositionY - mousePosition.y), 0f , 0f), Space.World);
+                    
+                    //2 * (mousePosition.x - oldPositionX)
                 }
 
 
@@ -157,14 +159,7 @@ public class saut : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             // Reset appliqu� au mode de contr�le en cours (d�placement / rotation)
-            if (mode <= 2)
-            {
-                transform.position = memoryPosition;
-            }
-            else
-            {
-                transform.rotation = memoryRotation;
-            }
+            
         }
 
 
@@ -179,19 +174,17 @@ public class saut : MonoBehaviour
         
     }
 
-    public void changeMode()
+    public void reset()
     {
-        Debug.Log("patate");
+        if (mode <= 2)
+        {
+            transform.position = memoryPosition;
+        }
+        else
+        {
+            transform.rotation = memoryRotation;
+        }
 
-            if (mode <= 2)
-            {
-                mode++;
-            }
-            else
-            {
-                mode = 1;
-            }
-        
     }
 
     /*public void OnTriggerEnter(Collider touched)

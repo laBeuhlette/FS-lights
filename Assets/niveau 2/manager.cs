@@ -12,10 +12,24 @@ public class manager : MonoBehaviour
 
     public string LevelToLoad;
 
+    public GameObject check1;
+
+
+    public static int avance;
+
     // Start is called before the first frame update
     void Start()
     {
         Application.targetFrameRate = 60;
+
+        if (avance > 0)
+        {
+            check1.SetActive(true);
+        }
+        else
+        {
+            check1.SetActive(false);
+        }
 
     }
 
@@ -40,6 +54,9 @@ public class manager : MonoBehaviour
                 
             }
         }
+
+        
+
     }
 
     void changeScene()

@@ -148,9 +148,15 @@ public class cast : MonoBehaviour
             diff.SetText(diffPix.ToString());
             Debug.Log(diffPix);
 
-            if(diffPix < 700)
+            if(diffPix < 1500)
             {
                 Debug.Log("level completed");
+                   
+                if(manager.avance < 1)
+                {
+                    manager.avance = 1;
+                }
+
                 SceneManager.LoadScene(LevelToLoad);
             }
     }

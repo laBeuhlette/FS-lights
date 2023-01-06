@@ -42,5 +42,9 @@ public class camRotate : MonoBehaviour
             transform.Rotate(new Vector3(0f,  (oldPositionX - mousePosition.x) * 1.5f , 0f), Space.World);
         }
         oldPositionX = mousePosition.x;
+
+        transform.rotation = new Quaternion (transform.rotation.x , Mathf.Clamp(transform.rotation.y, -0.8f, 0.5f), transform.rotation.z, transform.rotation.w); 
+
+        
     }
 }

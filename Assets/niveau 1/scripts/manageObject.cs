@@ -41,6 +41,8 @@ public class manageObject : MonoBehaviour
     private GameObject ro;
     private GameObject rc;
     private GameObject verif;
+    private GameObject cpt;
+    private GameObject rz;
 
     public TextMeshProUGUI tuto;
 
@@ -102,6 +104,12 @@ public class manageObject : MonoBehaviour
                 case "VERIF":
                     verif = child;
                     break;
+                case "cpt":
+                    cpt = child;
+                    break;
+                case "RZ":
+                    rz = child;
+                    break;
                 default :
                     break;
             }
@@ -127,7 +135,7 @@ public class manageObject : MonoBehaviour
 
         if(target != null)
         {
-            ratioSensi = Vector3.Distance(target.transform.position, torch.transform.position) / 25;
+            ratioSensi = Vector3.Distance(target.transform.position, torch.transform.position) / 100;
         }
         else
         {
@@ -220,6 +228,12 @@ public class manageObject : MonoBehaviour
         }*/
     }
 
+    public void resetObject()
+    {
+        if (target.tag == "Objets")
+        target.GetComponent<saut>().reset();
+    }
+
     public void phase1()
     {
         // Manager en mode profondeur
@@ -286,6 +300,8 @@ public class manageObject : MonoBehaviour
         
         verif.SetActive(true);
         rc.SetActive(true);
+        cpt.SetActive(true);
+        rz.SetActive(true);
         
         tuto.SetText("you place the last object and press the verif button");
     }
