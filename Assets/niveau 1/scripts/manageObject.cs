@@ -46,6 +46,8 @@ public class manageObject : MonoBehaviour
 
     public TextMeshProUGUI tuto;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
