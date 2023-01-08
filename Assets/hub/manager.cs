@@ -10,7 +10,8 @@ public class manager : MonoBehaviour
     private Vector3 mousePosition;
     private GameObject target;
 
-    public string LevelToLoad;
+    public string Level1;
+    public string Level2;
 
     public GameObject check1;
 
@@ -48,7 +49,12 @@ public class manager : MonoBehaviour
                 if (hit.transform.tag == "Lvl1")
                 {
                     Debug.Log("lancement niveau 1");
-                    changeScene();
+                    LoadLvl1();
+                }
+                if (hit.transform.tag == "Lvl2")
+                {
+                    Debug.Log("lancement niveau 2");
+                    LoadLvl2();
                 }
 
                 
@@ -59,9 +65,14 @@ public class manager : MonoBehaviour
 
     }
 
-    void changeScene()
+    void LoadLvl1()
     {
-        SceneManager.LoadScene(LevelToLoad);
+        SceneManager.LoadScene(Level1);
+    }
+
+    void LoadLvl2()
+    {
+        SceneManager.LoadScene(Level2);
     }
     
 }

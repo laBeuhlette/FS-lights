@@ -46,7 +46,8 @@ public class manageObject : MonoBehaviour
 
     public TextMeshProUGUI tuto;
 
-
+    public Material Mbase;
+    public Material Mselected;
 
     // Start is called before the first frame update
     void Start()
@@ -161,12 +162,14 @@ public class manageObject : MonoBehaviour
                         }
                         else
                             target.GetComponent<saut>().canMove = false;
+                            target.GetComponent<MeshRenderer> ().material = Mbase;
                     }
                     
 
                     target = hit.transform.gameObject;
 
                     target.GetComponent<saut>().canMove = true;
+                    target.GetComponent<MeshRenderer> ().material = Mselected;
                     target.GetComponent<saut>().mode = managerMode;
                 }
                 
@@ -236,6 +239,8 @@ public class manageObject : MonoBehaviour
         target.GetComponent<saut>().reset();
     }
 
+
+    // PHASES
     public void phase1()
     {
         // Manager en mode profondeur
@@ -244,6 +249,7 @@ public class manageObject : MonoBehaviour
         
         // activation bloc ref et sa target
         c0.SetActive(true);
+        c0.GetComponent<MeshRenderer> ().material = Mselected;
         target = c0;
         
 
@@ -267,10 +273,11 @@ public class manageObject : MonoBehaviour
 
         c0.tag = "Ignore" ;
         target.GetComponent<saut>().canMove = false;
-
+        c0.GetComponent<MeshRenderer> ().material = Mbase;
         
         c1.SetActive(true);
         target = c1;
+        c1.GetComponent<MeshRenderer> ().material = Mselected;
 
         c1_target.SetActive(true);
         c1_sphere.SetActive(true);
@@ -293,6 +300,7 @@ public class manageObject : MonoBehaviour
         c1_sphere.SetActive(false);
         c1.tag = "Ignore";
         c1.GetComponent<saut>().canMove = false;
+        c1.GetComponent<MeshRenderer> ().material = Mbase;
         target = null;
 
         c2.SetActive(true);
