@@ -80,6 +80,13 @@ public class manager : MonoBehaviour
                     Debug.Log("lancement niveau 2");
                     LoadLvl2();
                 }
+                if (hit.transform.tag == "scene")
+                {
+                    if(hit.transform.name == "tour narbonaise")
+                    {
+                        LoadEntracte1();
+                    }
+                }
 
                 
             }
@@ -97,6 +104,15 @@ public class manager : MonoBehaviour
     void LoadLvl2()
     {
         SceneManager.LoadScene(Level2);
+    }
+
+    void LoadEntracte1()
+    {
+        SceneManager.LoadScene("entracte 1");
+    }
+    void LoadEntracte2()
+    {
+        SceneManager.LoadScene("entracte 2");
     }
     
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 using TMPro;
 
+using UnityEngine.SceneManagement;
+
 public class manageObject : MonoBehaviour
 {
 
@@ -358,6 +360,7 @@ public class manageObject : MonoBehaviour
         Debug.Log("phase 2_2");
         c0.tag = "Ignore";
         c0_target.SetActive(false);
+        c0.GetComponent<saut>().canMove = false;
 
         c1.SetActive(true);
         c2.SetActive(true);
@@ -371,12 +374,13 @@ public class manageObject : MonoBehaviour
         rc.SetActive(true);
         cpt.SetActive(true);
         rz.SetActive(true);
+        ro.SetActive(true);
 
     }
 
     public void toMenu()
     {
-        
+        SceneManager.LoadScene("Menu");
     }
 
 }
