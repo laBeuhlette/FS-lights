@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44787776, g: 0.497872, b: 0.5754616, a: 1}
+  m_IndirectSpecularColor: {r: 0.44529897, g: 0.49460506, b: 0.5728597, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6520,7 +6520,7 @@ GameObject:
   - component: {fileID: 916830173}
   - component: {fileID: 916830172}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Particle System 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11875,6 +11875,10 @@ MonoBehaviour:
   Level1: niv 1
   Level2: niv 2
   check1: {fileID: 220848991}
+  check2: {fileID: 1036564893}
+  niveau2: {fileID: 1322902722}
+  particle1: {fileID: 559389299}
+  particle2: {fileID: 916830170}
 --- !u!1 &1322902722 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4bbbd7a843d65af448dfc1ee04486c51,

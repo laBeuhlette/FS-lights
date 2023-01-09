@@ -31,6 +31,8 @@ public class cast : MonoBehaviour
 
     public TextMeshProUGUI diff;
 
+    public GameObject sceneIndic;
+
 
     // Start is called before the first frame update
     void Start()
@@ -145,19 +147,26 @@ public class cast : MonoBehaviour
 
             }
 
-            diff.SetText(diffPix.ToString());
+            
             Debug.Log(diffPix);
 
-            if(diffPix < 1500)
+            if(diffPix < 1700)
             {
                 Debug.Log("level completed");
                    
-                if(manager.avance < 1)
+                if(manager.avance < 1 && sceneIndic.name == "scene 1")
                 {
                     manager.avance = 1;
                 }
-
+                else if (manager.avance < 2 && sceneIndic.name == "scene 2")
+                {
+                    manager.avance = 2;
+                }
                 SceneManager.LoadScene(LevelToLoad);
+            }
+            else
+            {
+                diff.SetText("Incorrect attempt");
             }
     }
 }

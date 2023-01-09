@@ -31,6 +31,8 @@ public class manageObject : MonoBehaviour
     public GameObject c1_target;
     public GameObject c1_sphere;
     public GameObject c2;
+    public GameObject c3;
+    public GameObject c4;
     
 
     public GameObject UI;
@@ -49,12 +51,16 @@ public class manageObject : MonoBehaviour
     public Material Mbase;
     public Material Mselected;
 
+    public GameObject sceneIndic;
+
     // Start is called before the first frame update
     void Start()
     {
 
         Application.targetFrameRate = 60;
         mesObjets = GameObject.FindGameObjectsWithTag("Objets");
+        UI_parts = GameObject.FindGameObjectsWithTag("UI_parts");
+
         foreach (GameObject Obj in mesObjets)
         {
             Obj.SetActive(false);
@@ -78,6 +84,12 @@ public class manageObject : MonoBehaviour
                 case "cube2":
                     c2 = Obj;
                     break;
+                case "cube3":
+                    c3 = Obj;
+                    break;
+                case "cube4":
+                    c4 = Obj;
+                    break;
                 case "sphere":
                     c1_sphere = Obj;
                     break;
@@ -85,7 +97,7 @@ public class manageObject : MonoBehaviour
                     break;
             }
         }
-        UI_parts = GameObject.FindGameObjectsWithTag("UI_parts");
+        
         foreach (GameObject child in UI_parts) {
 
             child.SetActive(false);
@@ -120,8 +132,20 @@ public class manageObject : MonoBehaviour
 
         
         
-
-        phase1();
+        switch (sceneIndic.name)
+        {
+            case "scene 1":
+                phase1();
+                break;
+            case "scene 2":
+                phase2_1();
+                break;
+            case "scene 3":
+                break;
+            default:
+                break;
+        }
+        
         
 
         //managerMode = 1;
@@ -316,5 +340,34 @@ public class manageObject : MonoBehaviour
         tuto.SetText("you place the last object and press the verif button");
     }
 
+    public void phase2_1()
+    {
+        Debug.Log("phase 2_1");
+        
+        managerMode = 3;
+        c0.SetActive(true);
+        c0_target.SetActive(true);
+    }
+
+    public void phase2_2()
+    {
+        Debug.Log("phase 2_2");
+        c0.tag = "Ignore";
+        c0_target.SetActive(false);
+
+        c1.SetActive(true);
+        c2.SetActive(true);
+        c3.SetActive(true);
+        c4.SetActive(true);
+
+        po.SetActive(true);
+        pr.SetActive(true);
+        
+        verif.SetActive(true);
+        rc.SetActive(true);
+        cpt.SetActive(true);
+        rz.SetActive(true);
+
+    }
 
 }

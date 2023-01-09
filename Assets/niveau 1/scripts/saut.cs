@@ -137,9 +137,10 @@ public class saut : MonoBehaviour
                 // ////////////////Rotation////////////////////
                 else if (mode == 3)
                 {
-                    transform.Rotate(new Vector3(2 * (oldPositionY - mousePosition.y), 0f , 0f), Space.World);
+                    transform.Rotate(new Vector3(0f, 2 * (mousePosition.x - oldPositionX) , 0f), Space.World);
+                    //Debug.Log(transform.rotation.y);
                     
-                    //2 * (mousePosition.x - oldPositionX)
+                    //2 * (mousePosition.x - oldPositionX)  //  2 * (oldPositionY - mousePosition.y)
                 }
 
 

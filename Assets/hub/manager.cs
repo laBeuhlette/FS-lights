@@ -14,7 +14,12 @@ public class manager : MonoBehaviour
     public string Level2;
 
     public GameObject check1;
+    public GameObject check2;
 
+    public GameObject niveau2;
+
+    public GameObject particle1;
+    public GameObject particle2;
 
     public static int avance;
 
@@ -23,13 +28,30 @@ public class manager : MonoBehaviour
     {
         Application.targetFrameRate = 60;
 
-        if (avance > 0)
+        particle1.SetActive(true);
+
+        particle2.SetActive(false);
+
+        niveau2.GetComponent<BoxCollider>().enabled = false;
+        
+
+        if (avance == 1)
         {
             check1.SetActive(true);
+            particle1.SetActive(false);
+            particle2.SetActive(true);
+
+            check2.SetActive(false);
+            niveau2.GetComponent<BoxCollider>().enabled = true;
+        }
+        else if (avance == 2)
+        {
+            check2.SetActive(true);
         }
         else
         {
             check1.SetActive(false);
+            check2.SetActive(false);
         }
 
     }
@@ -37,6 +59,8 @@ public class manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //Debug.Log(avance);
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit hit;
 
