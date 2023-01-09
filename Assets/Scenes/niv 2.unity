@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4400027, g: 0.4883861, b: 0.5688848, a: 1}
+  m_IndirectSpecularColor: {r: 0.44250038, g: 0.49157965, b: 0.5714208, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2740,6 +2740,8 @@ MonoBehaviour:
   UI: {fileID: 1204130527}
   UI_parts: []
   tuto: {fileID: 2105106669}
+  Mbase: {fileID: 0}
+  Mselected: {fileID: 0}
 --- !u!43 &118862289
 Mesh:
   m_ObjectHideFlags: 0
