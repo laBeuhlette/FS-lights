@@ -374,4 +374,9 @@ public class manageObject : MonoBehaviour
 
     }
 
+    public void toMenu()
+    {
+        
+    }
+
 }
