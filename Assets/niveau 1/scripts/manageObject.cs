@@ -137,6 +137,10 @@ public class manageObject : MonoBehaviour
             case "scene 1":
                 phase1();
                 break;
+            case "entracte 1":
+                rc.SetActive(true);
+                toCam();
+                break;
             case "scene 2":
                 phase2_1();
                 break;
