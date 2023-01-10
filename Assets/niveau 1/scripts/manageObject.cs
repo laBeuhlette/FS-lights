@@ -252,7 +252,10 @@ public class manageObject : MonoBehaviour
     public void toCam()
     {
         if(target != null)
+        {
             target.GetComponent<saut>().canMove = false;
+            target.GetComponent<MeshRenderer> ().material = Mbase;
+        }
 
         target = sphere;
         target.GetComponent<camRotate>().canMove = true;

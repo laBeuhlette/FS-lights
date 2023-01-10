@@ -58,6 +58,7 @@ public class manager : MonoBehaviour
             particle1.SetActive(false);
             particle2.SetActive(false);
             particle3.SetActive(true);
+            niveau2.GetComponent<BoxCollider>().enabled = true;
             niveau3.GetComponent<BoxCollider>().enabled = true;
         }
         else if (avance == 3)
@@ -66,6 +67,8 @@ public class manager : MonoBehaviour
             particle1.SetActive(false);
             particle2.SetActive(false);
             particle3.SetActive(false);
+            niveau2.GetComponent<BoxCollider>().enabled = true;
+            niveau3.GetComponent<BoxCollider>().enabled = true;
         }
         else
         {
