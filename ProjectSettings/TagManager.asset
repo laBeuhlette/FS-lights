@@ -12,6 +12,7 @@ TagManager:
   - UI_parts
   - Lvl2
   - scene
+  - Lvl3
   layers:
   - Default
   - TransparentFX

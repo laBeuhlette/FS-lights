@@ -147,6 +147,7 @@ public class manageObject : MonoBehaviour
                 phase2_1();
                 break;
             case "scene 3":
+                phase3_1();
                 break;
             default:
                 break;
@@ -353,6 +354,7 @@ public class manageObject : MonoBehaviour
         managerMode = 3;
         c0.SetActive(true);
         c0_target.SetActive(true);
+        ro.SetActive(true);
     }
 
     public void phase2_2()
@@ -374,8 +376,28 @@ public class manageObject : MonoBehaviour
         rc.SetActive(true);
         cpt.SetActive(true);
         rz.SetActive(true);
-        ro.SetActive(true);
+        
 
+    }
+
+    public void phase3_1()
+    {
+        Debug.Log("phase 3_1");
+
+        c0.SetActive(true);
+        c1.SetActive(true);
+        c2.SetActive(true);
+        c3.SetActive(true);
+        
+
+        po.SetActive(true);
+        pr.SetActive(true);
+        
+        verif.SetActive(true);
+        rc.SetActive(true);
+        cpt.SetActive(true);
+        rz.SetActive(true);
+        ro.SetActive(true);
     }
 
     public void toMenu()

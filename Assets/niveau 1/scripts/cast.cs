@@ -154,15 +154,32 @@ public class cast : MonoBehaviour
             {
                 Debug.Log("level completed");
                    
-                if(manager.avance < 1 && sceneIndic.name == "scene 1")
+                if(sceneIndic.name == "scene 1")
                 {
-                    manager.avance = 1;
+                    if (manager.avance < 1)
+                    {
+                        manager.avance = 1;
+                    }
+                    SceneManager.LoadScene("entracte 1");
                 }
-                else if (manager.avance < 2 && sceneIndic.name == "scene 2")
+                else if (sceneIndic.name == "scene 2")
                 {
-                    manager.avance = 2;
+                    if (manager.avance < 2)
+                    {
+                        manager.avance = 2;
+                    }
+                    SceneManager.LoadScene("entracte 2");
                 }
-                SceneManager.LoadScene(LevelToLoad);
+                else if (sceneIndic.name == "scene 3")
+                {
+                    if (manager.avance < 3)
+                    {
+                        manager.avance = 3;
+                    }
+                    manager.avance = 3;
+                    SceneManager.LoadScene("entracte 3");
+                }
+                //SceneManager.LoadScene(LevelToLoad);
             }
             else
             {
