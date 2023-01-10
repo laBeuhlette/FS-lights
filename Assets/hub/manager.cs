@@ -63,6 +63,9 @@ public class manager : MonoBehaviour
         else if (avance == 3)
         {
             check3.SetActive(true);
+            particle1.SetActive(false);
+            particle2.SetActive(false);
+            particle3.SetActive(false);
         }
         else
         {
