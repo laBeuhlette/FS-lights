@@ -1,8 +1,5 @@
-using JetBrains.Annotations;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
 /*
@@ -23,8 +20,10 @@ public class CSVLoader
 
     public void LoadCSV()//loads the csv
     {
-        string path = Path.Combine(Application.streamingAssetsPath, "Language.csv");//finds the asset path
-        csvFile = File.ReadAllLines(path);
+        TextAsset path =  Resources.Load<TextAsset>("Language");//finds the asset path
+        //Debug.Log(path.ToString().Split("\n"));
+        //csvFile = Resources.Load("glass") as string[];
+        csvFile = path.ToString().Split(lineSeparator);
 
     }
 
@@ -38,6 +37,7 @@ public class CSVLoader
         for (int i = 1; i < headers.Length; i++)
         {
             headers[i] = headers[i].TrimStart(' ',surround);
+            headers[i] = headers[i].Replace("\"", "");
             headers[i] = headers[i].TrimEnd(surround);
             result[i-1] = headers[i];
             languagesDetected++;
@@ -55,13 +55,16 @@ public class CSVLoader
 
         for (int i = 1; i < lines.Length; i++)//formats all lines
         {
+            
             string line = lines[i];
             string[] fields = line.Split(fieldSeparator, StringSplitOptions.None);
             for (int j = 0; j < fields.Length; j++)
             {
-                fields[j] = fields[j].TrimStart(' ', surround);
+                Debug.Log(fields[j]);
+                fields[j] = fields[j].TrimStart(' ',surround);
+                fields[j] = fields[j].Replace("\"", "");
                 fields[j] = fields[j].TrimEnd(surround);
-                
+                Debug.Log(fields[j]);
                 
             }
             dictionary.Add(fields[0], fields[languageIndex+1]);//adds line to Dictionary
